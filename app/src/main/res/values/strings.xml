@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Вместе</string>
+    <string name="nearest_lesson">Ближайшее занятие</string>
+    <string name="learned">Пройдено</string>
+    <string name="left">Осталось</string>
+    <string name="show_chat">Показать чат</string>
+    <string name="no_new">Нет новых</string>
+    <string name="all">Все</string>
+    <string name="last_courses">Последние курсы</string>
+</resources>
