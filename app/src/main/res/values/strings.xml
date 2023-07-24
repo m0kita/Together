@@ -7,4 +7,6 @@
     <string name="no_new">Нет новых</string>
     <string name="all">Все</string>
     <string name="last_courses">Последние курсы</string>
+    <string name="your_notes">Ваши заметки</string>
+    <string name="community_notes">Заметки сообщества</string>
 </resources>

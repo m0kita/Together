@@ -1,11 +1,11 @@
-package ru.mokita.profnotes.ui.lastcourses.adapter
+package ru.mokita.profnotes.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.mokita.profnotes.databinding.ItemCourseThemeBinding
 
-class CoursesThemesAdapter(private val themes: List<String>): RecyclerView.Adapter<CoursesThemesAdapter.CourseThemeViewHolder>() {
+class CourseThemesAdapter(private val themes: List<String>): RecyclerView.Adapter<CourseThemesAdapter.CourseThemeViewHolder>() {
 
     inner class CourseThemeViewHolder(private val binding: ItemCourseThemeBinding): RecyclerView.ViewHolder(binding.root) {
         fun onBind(theme: String) {
