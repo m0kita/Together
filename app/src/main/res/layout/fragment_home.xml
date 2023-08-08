@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvNearestLesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nearest_lesson"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNearestLessonDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сегодня в 12:00"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvNearestLesson"
+            app:layout_constraintTop_toBottomOf="@id/tvNearestLesson" />
+
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_search_button"
+            android:padding="12dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/tvNearestLessonDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvNearestLesson" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/yellow"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="16dp">
+
+                <TextView
+                    android:id="@+id/tvLearned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:text="@string/learned"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLearnedCourses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 курса"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvLearned"
+                    app:layout_constraintTop_toBottomOf="@id/tvLearned" />
+
+                <TextView
+                    android:id="@+id/tvLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/left"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvLearned" />
+
+                <TextView
+                    android:id="@+id/tvLeftLessons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 занятий"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/tvLeft"
+                    app:layout_constraintTop_toBottomOf="@id/tvLeft" />
+
+                <Button
+                    android:id="@+id/btnShowChat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_dark_corner_shape"
+                    android:padding="12dp"
+                    android:text="@string/show_chat"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/dark_gray"
+                    app:layout_constraintEnd_toEndOf="@id/tvLeftLessons"
+                    app:layout_constraintStart_toStartOf="@id/tvLearnedCourses"
+                    app:layout_constraintTop_toBottomOf="@id/tvLearnedCourses" />
+
+                <TextView
+                    android:id="@+id/tvNewMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="@string/no_new"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/btnShowChat"
+                    app:layout_constraintEnd_toEndOf="@id/btnShowChat"
+                    app:layout_constraintTop_toTopOf="@id/btnShowChat" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp">
+
+                <TextView
+                    android:id="@+id/tvLastCourses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/bg_left_button_fragment"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/last_courses"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnLastCoursesAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btnLastCoursesAll"
+                    android:layout_width="64dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_right_button_fragment"
+                    android:padding="0dp"
+                    android:text="@string/all"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/tvLastCourses"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvLastCourses" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpLastCourses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/btnLastCoursesAll"
+                    app:layout_constraintStart_toStartOf="@id/tvLastCourses"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastCourses" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tbLastCoursesTabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/white"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@id/tvLastCourses"
+                    app:layout_constraintTop_toBottomOf="@id/vpLastCourses"
+                    app:tabBackground="@drawable/tab_indicator"
+                    app:tabIndicatorColor="@color/black"
+                    app:tabIndicatorHeight="2dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/informationCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_dark_corner_shape"
+                    android:padding="12dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/btnLastCoursesAll"
+                    app:layout_constraintStart_toStartOf="@id/tvLastCourses"
+                    app:layout_constraintTop_toBottomOf="@id/tbLastCoursesTabs">
+
+                    <TextView
+                        android:id="@+id/tvTaskStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Задание не принято!"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Скорее исправь это"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTaskStatus" />
+
+                    <ImageButton
+                        android:id="@+id/btnCloseInformationCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_close"
+                        app:layout_constraintBottom_toBottomOf="@id/tvTaskStatus"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvTaskStatus" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvYourNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/bg_left_button_fragment"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/your_notes"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnYourNotesAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/informationCard" />
+
+                <Button
+                    android:id="@+id/btnYourNotesAll"
+                    android:layout_width="64dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_right_button_fragment"
+                    android:padding="0dp"
+                    android:text="@string/all"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/tvYourNotes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvYourNotes" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/yourNotesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_yellow_corner_shape"
+                    android:padding="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/btnYourNotesAll"
+                    app:layout_constraintStart_toStartOf="@id/tvYourNotes"
+                    app:layout_constraintTop_toBottomOf="@id/tvYourNotes">
+
+                    <TextView
+                        android:id="@+id/tvNoteTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="244dp"
+                        android:text="Для создания новой Activity"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvNoteDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Нужно лишь применить старый дедовский визард"
+                        android:textColor="@color/dark_yellow"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvNoteTitle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvNoteDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_dark_corner_shape"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="12 июля"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@id/btnYourNotesAll"
+                    app:layout_constraintTop_toBottomOf="@id/btnYourNotesAll" />
+
+                <TextView
+                    android:id="@+id/tvCommunityNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="2dp"
+                    android:background="@drawable/bg_left_button_fragment"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/community_notes"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnCommunityNotesAll"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/yourNotesCard" />
+
+                <Button
+                    android:id="@+id/btnCommunityNotesAll"
+                    android:layout_width="64dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_right_button_fragment"
+                    android:padding="0dp"
+                    android:text="@string/all"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/light_gray"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCommunityNotes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvCommunityNotes" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_yellow_corner_shape"
+                    android:paddingHorizontal="12dp"
+                    android:paddingTop="26dp"
+                    android:paddingBottom="12dp"
+                    app:layout_constraintEnd_toEndOf="@id/btnCommunityNotesAll"
+                    app:layout_constraintStart_toStartOf="@id/tvCommunityNotes"
+                    app:layout_constraintTop_toBottomOf="@id/tvCommunityNotes">
+
+                    <TextView
+                        android:id="@+id/tvCommunityNoteTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="Тест для текста в несколько строк. Это очень важно"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvCommunityNoteDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Это очень важный момент. Его нужно проверять постоянно"
+                        android:textColor="@color/dark_yellow"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCommunityNoteTitle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvCommunityNoteDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_dark_corner_shape"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="12 июля"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@id/btnCommunityNotesAll"
+                    app:layout_constraintTop_toBottomOf="@id/btnCommunityNotesAll" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_dark_corner_shape"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    app:layout_constraintStart_toStartOf="@id/tvCommunityNotes"
+                    app:layout_constraintTop_toBottomOf="@id/tvCommunityNotes">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivUserAvatar"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/test_image" />
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="Имя Фамилия"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

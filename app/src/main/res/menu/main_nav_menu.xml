@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/mainFragment"
+    <item android:id="@id/homeFragment"
         android:icon="@drawable/ic_home"
         android:iconTint="@color/black"
         android:title="Home"/>
@@ -8,10 +8,10 @@
         android:icon="@drawable/ic_bookmarks"
         android:iconTint="@color/black"
         android:title="Bookmarks"/>
-    <item android:id="@+id/addNoteFragment"
+    <item android:id="@id/addNoteFragment"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_add"
-        android:title="Add"/>
+        android:title="Add Note"/>
     <item android:id="@+id/chatFragment"
         android:iconTint="@color/black"
         android:icon="@drawable/ic_chat"

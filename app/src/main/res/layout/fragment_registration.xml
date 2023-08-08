@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    android:paddingHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivAppLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppLogo"/>
+
+    <TextView
+        android:id="@+id/ivLoginHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пожалуйста,  введите данные для новой учетной записи"
+        android:textSize="14sp"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintStart_toStartOf="@id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        android:layout_marginTop="6dp"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textPersonName"
+        android:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLoginHint"
+        android:background="@drawable/bg_dark_corner_shape"
+        android:backgroundTint="@color/opacity_dark_gray"
+        android:hint="Имя"
+        android:textColorHint="@color/dark_gray"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/etSurname"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:inputType="textPersonName"
+        android:imeOptions="actionNext"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        android:background="@drawable/bg_dark_corner_shape"
+        android:backgroundTint="@color/opacity_dark_gray"
+        android:hint="Фамилия"
+        android:textColorHint="@color/dark_gray"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSurname"
+        android:background="@drawable/bg_dark_corner_shape"
+        android:backgroundTint="@color/opacity_dark_gray"
+        android:hint="@string/telephone_number"
+        android:textColorHint="@color/dark_gray"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:padding="12dp"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNumber"
+        android:background="@drawable/bg_dark_corner_shape"
+        android:backgroundTint="@color/opacity_dark_gray"
+        android:hint="@string/password"
+        android:textColorHint="@color/dark_gray"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:padding="12dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Войти с учётной записью"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegistration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/dark_gray"
+        app:cornerRadius="8dp"
+        android:text="@string/registration"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnLogin"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:indeterminate="true"
+        android:indeterminateOnly="false"
+        android:indeterminateTint="@color/dark_gray"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

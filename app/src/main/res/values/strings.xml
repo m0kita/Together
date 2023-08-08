@@ -9,4 +9,8 @@
     <string name="last_courses">Последние курсы</string>
     <string name="your_notes">Ваши заметки</string>
     <string name="community_notes">Заметки сообщества</string>
+    <string name="telephone_number">Номер телефона</string>
+    <string name="password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="registration">Регистрация</string>
 </resources>

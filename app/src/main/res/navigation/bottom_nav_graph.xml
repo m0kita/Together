@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.mokita.together.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_communityNoteFragment"
+            app:destination="@id/communityNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="ru.mokita.together.ui.addnote.AddNoteFragment"
+        android:label="Add Note"
+        tools:layout="@layout/fragment_add_note">
+        <action
+            android:id="@+id/action_addNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="ru.mokita.together.ui.note.NoteFragment"
+        android:label="NoteFragment" />
+    <fragment
+        android:id="@+id/courseFragment"
+        android:name="ru.mokita.together.ui.course.CourseFragment"
+        android:label="CourseFragment" />
+    <fragment
+        android:id="@+id/communityNoteFragment"
+        android:name="ru.mokita.together.ui.communitynote.CommunityNoteFragment"
+        android:label="CommunityNoteFragment" />
+</navigation>
